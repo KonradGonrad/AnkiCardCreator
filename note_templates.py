@@ -178,7 +178,8 @@ class AnkiCardCreator:
 
         Note:
             Cards will be automatically generated in both directions (front→back and back→front).
-
+            Important: All values must be grouped into single arrays. Do not separate each card as an individual dictionary or block.
+            
         Include:
             'deck_name' = '{deck_name}'
             Optional 'tags' = list[str]

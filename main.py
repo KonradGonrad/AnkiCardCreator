@@ -9,11 +9,3 @@ DECK_NAMES = ['Python - base',
               'test']
 
 DECK_NAME = DECK_NAMES[-1]
-
-cards = AnkiCardCreator.messengerCard(front=['Hola', 'Bueno'],
-                                      back=['Hej', 'dobrze'],
-                                      deck_name='test',
-                                      type_card='T',
-                                      ).cards
-
-AnkiCardCreator.ImportToAnki(cards=cards, anki_url=ANKI_API_URL)
