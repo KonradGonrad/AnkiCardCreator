@@ -19,3 +19,7 @@ The program is structured around custom Python classes that correspond to specif
     - A prompt method that helps you generate data using an AI tool (e.g., ChatGPT), based on your input material.
 
 Once the cards are created, you can use the main.py file to send them directly to Anki via AnkiConnect.
+
+
+Program automaticly adds flashcards into our decks. Based on the data in *spanish.py* I was able to introduce all data into my anki folder:
+![spanish_anki](/spanish.png)
