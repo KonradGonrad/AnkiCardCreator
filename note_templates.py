@@ -74,7 +74,7 @@ class AnkiCardCreator:
                            "Correct Answer": corr
                 },
                 "options": {
-                    "allowDuplicate": True
+                    "allowDuplicate": False
                 },
                 "tags": self.tags
             }
@@ -120,7 +120,7 @@ class AnkiCardCreator:
                            "Answer": a,
                 },
                 "options": {
-                    "allowDuplicate": True
+                    "allowDuplicate": False
                 },
                 "tags": self.tags
             }
@@ -164,12 +164,12 @@ class AnkiCardCreator:
                            "Back": b,
                 },
                 "options": {
-                    "allowDuplicate": True
+                    "allowDuplicate": False
                 },
                 "tags": self.tags
             }
         
-        def prompt(deck_name: str):
+        def prompt(deck_name: str, type_card: Literal["T", "B"], categories: list[str] = None):
             return f"""
         Create Anki flashcards using the template:
         Each card should contain:
@@ -178,19 +178,22 @@ class AnkiCardCreator:
 
         Note:
             Cards will be automatically generated in both directions (front→back and back→front).
-            Important: All values must be grouped into single arrays. Do not separate each card as an individual dictionary or block.
-            
+            Important: All values must be grouped into single arrays. Do not separate each card as an individual dictionary or block. 
+            {"(The only exception is grouping by categories, if there are any provided.)" if not categories == None else ""}
+
         Include:
             'deck_name' = '{deck_name}'
             Optional 'tags' = list[str]
+            'type_card' = '{type_card}'
 
         Provide the output in the following format:
             front=[...],
             back=[...],
-            deck_name='{deck_name}',
+            deck_name='{deck_name}{"" if categories == None else "::category_name"}',
             tags=[...]
+            type_card='{type_card}'
 
-        Create that flashcards based on the following data:
+        Create that flashcards based on the following data {f"and if it is possible divide flashcards into categories {categories}" if not categories == None else ""}:
         """
         
     class ImportToAnki:
