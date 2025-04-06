@@ -21,5 +21,10 @@ The program is structured around custom Python classes that correspond to specif
 Once the cards are created, you can use the main.py file to send them directly to Anki via AnkiConnect.
 
 
+## Templates that I am using in this program:
+- [programming_template](https://github.com/KonradGonrad/Anki_programming_vs_template)
+- [messenger_template](https://github.com/KonradGonrad/Anki_messenger_template)
+
+### Results of using program using *spanish.py* file
 Program automaticly adds flashcards into our decks. Based on the data in *spanish.py* I was able to introduce all data into my anki folder:
 ![spanish_anki](/spanish.png)
